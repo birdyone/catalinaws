@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Catalina Jorquera - Portfolio</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="background-text">CATALINA JORQUERA CATALINA JORQUERA CATALINA JORQUERA •</div>
+<div class="floating-shapes">
+<img class="shape" src="Images/life.png" style="top:30%;left:10%;"/>
+<img class="shape" src="Images/iphone.png" style="top:50%;left:15%;"/>
+<img class="shape" src="Images/bird.png" style="bottom:50%;right:10%;"/>
+<img class="shape" src="Images/macbook.png" style="top: - 50%;right:10%;"/>
+<img class="shape" src="Images/carpo.png" style="bottom:10%;right:0%;"/>
+<img class="shape" src="Images/squirrel.png" style="bottom:15%;left:5%;"/>
+</div>
+<main>
+<h1>Hello World! I'm Catalina!</h1>
+<div class="title-wrapper"><h1 class="title-3d">
+<span class="main-title">Full Stack Developer</span> &amp; <span id="subtitle"> </span>
+</h1></div>
+<span class="subtitle" id="typing-text"></span>
+<div class="card" onclick="flipCard(this)">
+<div class="card-inner">
+<div class="card-front">
+<img alt="Catalina Avatar" src="Images/avatar.png"/>
+</div>
+<div class="card-back">
+<img alt="Catalina Avatar" src="Images/avatar.png"/>
+</div>
+</div>
+</div>
+<p class="clients">80+ Happy Clients</p>
+<button>
+<span class="text">Let's work together</span>
+<span class="container">
+<svg aria-hidden="true" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.75 17.25L1.5 12L6.75 6.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M12 4 L12 20" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M17.25 6.75L22.5 12L17.25 17.25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</span>
+</button>
+<section class="projects">
+<h2>Selected Work</h2>
+<div class="project-grid">
+<div class="project-card">
+<img alt="Project 1" src="Images/project1.png"/>
+<h3>Luxury E-Commerce</h3>
+<p>UI/UX &amp; branding for a high-end fashion store.</p>
+</div>
+<div class="project-card">
+<img alt="Project 2" src="Images/project2.png"/>
+<h3>Beauty App</h3>
+<p>Mobile-first design with a minimal aesthetic.</p>
+</div>
+<div class="project-card">
+<img alt="Project 3" src="Images/project3.png"/>
+<h3>Portfolio Website</h3>
+<p>3D elements and smooth animations with Framer &amp; Three.js.</p>
+</div>
+</div>
+</section>
+
+
+<section class="about-section" id="about">
+<h2 class="pixel-heading" id="about-title">👩‍💻 About Me</h2>
+<div class="typing-text" id="about-typing"></div>
+</section>
+<section class="contact">
+<h2>Let’s Connect</h2>
+<p>Interested in working together? Reach out!</p>
+<a class="contact-button" href="mailto:hello@catalinaj.dev">Email Me</a>
+</section>
+<section class="services">
+<h2>Services</h2>
+<div class="services-grid">
+<div>🎨 Branding</div>
+<div>🖥️ UX/UI Design</div>
+<div>💻 Web Development</div>
+<div>🧪 UX Consultancy</div>
+</div>
+</section>
+<section class="testimonials">
+<h2>What Clients Say</h2>
+<div class="testimonial-carousel">
+<blockquote>“Catalina elevated our entire brand. Her creative direction is unmatched.”</blockquote>
+<blockquote>“Working with her was seamless and inspiring. Highly recommended!”</blockquote>
+<blockquote>“The best UI designer we’ve worked with — period.”</blockquote>
+</div>
+</section>
+<section class="certifications">
+<h2>Certifications</h2>
+<div class="cert-grid">
+<img alt="MIT" onclick="showCertificate('Images/mit-certificate.png')" src="Images/mit.png"/>
+<img alt="Harvard" onclick="showCertificate('Images/harvard-certificate.png')" src="Images/harvard.png"/>
+<img alt="Oxford" onclick="showCertificate('Images/oxford-certificate.png')" src="Images/oxford.png"/>
+<img alt="Cambridge" onclick="showCertificate('Images/cambridge-certificate.png')" src="Images/cambridge.png"/>
+</div>
+</section>
+<script>
+      function showCertificate(imagePath) {
+        const modal = document.getElementById('certificateModal');
+        const image = document.getElementById('certificateImage');
+        image.src = imagePath;
+        modal.classList.add('show');
+      }
+    
+      function hideCertificate() {
+        const modal = document.getElementById('certificateModal');
+        modal.classList.remove('show');
+        setTimeout(() => {
+          const image = document.getElementById('certificateImage');
+          image.src = '';
+        }, 300);
+      }
+    </script>
+<!-- Modal -->
+<div class="modal" id="certificateModal" onclick="hideCertificate()">
+<div class="modal-content">
+<img alt="Certificate" id="certificateImage" src=""/>
+</div>
+</div>
+<section class="process">
+<h2>My Creative Process</h2>
+<ol class="process-steps">
+<li>🔍 Research &amp; Discovery</li>
+<li>🧱 Wireframing &amp; Structure</li>
+<li>🎨 Visual Design</li>
+<li>🚀 Development &amp; Launch</li>
+</ol>
+</section>
+
+<section class="terminal-section">
+  <div class="terminal-container" id="terminal">
+    <pre id="terminal-output"></pre>
+  </div>
+</section>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const words = ["Branding", "UX/UI Expertise", "Product Design"];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typingText = document.getElementById("typing-text");
+
+  function type() {
+    const current = words[wordIndex];
+    const typed = isDeleting
+      ? current.substring(0, charIndex--)
+      : current.substring(0, charIndex++);
+
+    typingText.textContent = typed;
+
+    if (!isDeleting && charIndex === current.length + 1) {
+      isDeleting = true;
+      setTimeout(type, 1000);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(type, 300);
+    } else {
+      setTimeout(type, isDeleting ? 50 : 100);
+    }
+  }
+
+  type();
+});
+</script><script src="script.js"></script>
+<audio id="keySound" src="https://www.myinstants.com/media/sounds/keyboard-2.mp3"></audio>
+</body>
+</html>
