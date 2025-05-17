@@ -657,3 +657,135 @@ button:is(:hover, :focus-visible) {
     text-shadow: 1px 0 red, -1px 0 cyan;
   }
 }
+
+
+
+.skills {
+  padding: 80px 20px;
+  background-color: #0f0f1c;
+  text-align: center;
+  color: white;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #9b00ff;
+  text-shadow: 0 0 10px #00f2fe;
+}
+
+.hex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hex {
+  width: 100px;
+  height: 55px;
+  background-color: #1f1f3a;
+  margin: 27.5px 6px;
+  position: relative;
+  clip-path: polygon(
+    50% 0%, 100% 25%, 100% 75%,
+    50% 100%, 0% 75%, 0% 25%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #00000050;
+  overflow: hidden;
+}
+
+.hex img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.hex:hover {
+  background: linear-gradient(135deg, #00f2fe, #9b00ff);
+  box-shadow: 0 0 15px #00f2fe, 0 0 25px #9b00ff;
+  transform: scale(1.05);
+}
+
+.hex:hover img {
+  transform: scale(1.1);
+}
+
+
+
+.glow-emoji {
+  display: inline-block;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 3px #39ff14);
+  transform: perspective(200px) rotateX(0deg) rotateY(0deg);
+}
+
+.glow-emoji:hover {
+  filter: drop-shadow(0 0 8px #39ff14) brightness(1.5);
+  transform: perspective(300px) rotateX(8deg) rotateY(6deg) scale(1.2);
+}
+
+
+
+.terminal-section {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+#terminal-output {
+  max-width: 90vw;
+  text-align: left;
+  margin: 0 auto;
+  white-space: pre-wrap;
+}
+
+
+/* TERMINAL FULLSCREEN INTRO */
+.terminal-fullscreen {
+  position: fixed;
+  inset: 0;
+  background: black;
+  color: #39ff14;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+  text-align: left;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.terminal-content {
+  width: 100%;
+  max-width: 800px;
+  animation: flicker 5s ease-out;
+}
+
+.terminal-cursor {
+  font-weight: bold;
+  animation: blink-caret 1s step-start infinite;
+}
+
+@keyframes blink-caret {
+  50% { opacity: 0; }
+}
+
+@keyframes crtShutdown {
+  0% { opacity: 1; }
+  90% { transform: scaleY(0.05); opacity: 1; }
+  100% { transform: scaleY(0); opacity: 0; }
+}
+
+.crt-off {
+  animation: crtShutdown 1s forwards;
+  transform-origin: center;
+}
