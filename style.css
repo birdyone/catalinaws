@@ -1,7 +1,11 @@
 
 body {
   margin: 0;
+<<<<<<< HEAD
   font-family: 'Orbitron', sans-serif;
+=======
+  font-family: 'Arial', sans-serif;
+>>>>>>> a4673bb74d935a98fb57f0ba48e9a62f8776d9a7
   text-align: center;
   background: white;
   overflow-x: hidden;
@@ -17,7 +21,11 @@ body {
   transform: translate(-50%, -50%);
   font-size: 20rem; /* Mucho más grande */
   font-weight: 900;
+<<<<<<< HEAD
   font-family: 'Orbitron', sans-serif;
+=======
+  font-family: 'Arial Black', 'Impact', sans-serif;
+>>>>>>> a4673bb74d935a98fb57f0ba48e9a62f8776d9a7
   letter-spacing: 0em;
   color: black;
   white-space: nowrap;
@@ -149,7 +157,11 @@ body {
 	display: grid;
 	place-items: center;
 	min-height: 100vh;
+<<<<<<< HEAD
 	font-family: 'Orbitron', sans-serif;
+=======
+	font-family:  "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
+>>>>>>> a4673bb74d935a98fb57f0ba48e9a62f8776d9a7
 	
 	overflow-x: hidden; overflow-y: auto;
 }
@@ -503,7 +515,11 @@ button:is(:hover, :focus-visible) {
   width: 100vw;
   background-color: #000;
   color: #39ff14;
+<<<<<<< HEAD
   font-family: 'Orbitron', monospace;
+=======
+  font-family: 'Courier New', monospace;
+>>>>>>> a4673bb74d935a98fb57f0ba48e9a62f8776d9a7
   padding: 100px 20px;
   min-height: 100vh;
   display: flex;
@@ -546,7 +562,11 @@ button:is(:hover, :focus-visible) {
   width: 100vw;
   background-color: #000;
   color: #39ff14;
+<<<<<<< HEAD
   font-family: 'Orbitron', monospace;
+=======
+  font-family: 'Courier New', monospace;
+>>>>>>> a4673bb74d935a98fb57f0ba48e9a62f8776d9a7
   padding: 100px 20px;
   min-height: 100vh;
   display: flex;
@@ -618,7 +638,11 @@ button:is(:hover, :focus-visible) {
 .terminal-section {
   background-color: black;
   color: #39ff14;
+<<<<<<< HEAD
   font-family: 'Orbitron', monospace;
+=======
+  font-family: 'Courier New', monospace;
+>>>>>>> a4673bb74d935a98fb57f0ba48e9a62f8776d9a7
   padding: 80px 20px;
   border-top: 4px solid #39ff14;
   border-bottom: 4px solid #39ff14;
@@ -753,7 +777,11 @@ button:is(:hover, :focus-visible) {
   inset: 0;
   background: black;
   color: #39ff14;
+<<<<<<< HEAD
   font-family: 'Orbitron', monospace;
+=======
+  font-family: 'Courier New', monospace;
+>>>>>>> a4673bb74d935a98fb57f0ba48e9a62f8776d9a7
   display: flex;
   align-items: center;
   justify-content: center;
@@ -789,6 +817,7 @@ button:is(:hover, :focus-visible) {
   animation: crtShutdown 1s forwards;
   transform-origin: center;
 }
+<<<<<<< HEAD
 
 
 .hex:hover::before {
@@ -880,3 +909,5 @@ button:is(:hover, :focus-visible) {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.6; }
 }
+=======
+>>>>>>> a4673bb74d935a98fb57f0ba48e9a62f8776d9a7
