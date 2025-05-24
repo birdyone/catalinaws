@@ -85,3 +85,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // Simulate loading bar
   setTimeout(showLines, 5000); // after fake loading
 });
+
