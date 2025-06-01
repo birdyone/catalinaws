@@ -37,7 +37,7 @@ Begin transmission:
       <audio id="crt-sound" src="assets/crt-off.mp3"></audio>
     </div>
   </div>
-  
+
 
   <main>
     <!-- Hero -->
@@ -46,6 +46,10 @@ Begin transmission:
       <h1 class="title-3d">
         <span class="main-title">Full Stack Developer</span> &amp; <span id="subtitle"></span>
       </h1>
+      <h2>
+        <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+      </h2>
+      
     </div>
     <span class="subtitle" id="typing-text"></span>
     <div class="card" onclick="flipCard(this)">
@@ -71,15 +75,27 @@ Begin transmission:
     </button>
 
     <!-- Services -->
-    <section class="services">
-      <h2>Services</h2>
-      <div class="services-grid">
-        <div>🎨 Branding</div>
-        <div>🖥️ UX/UI Design</div>
-        <div>💻 Web Development</div>
-        <div>🧪 UX Consultancy</div>
+    <div class="arcade">
+      <img src="arcade-final-cleaned.png" alt="Arcade Machine" class="arcade-img" />
+      <div class="screen">
+        <ul id="menu">
+          <li class="selected">> DESIGN</li>
+          <li>> DEVELOPMENT</li>
+          <li>> AI STRATEGY</li>
+          <li>> SECURITY</li>
+          <li>> BRANDING</li>
+          <li>> UX/UI CONSULTING</li>
+          <li>> E-COMMERCE</li>
+          <li>> FULL STACK INTEGRATIONS</li>
+          <li>> MVP TOOLKIT</li>
+          <li>> GROWTH STRATEGY</li>
+          <li>> INSERT COIN TO ENTER LABS</li>
+        </ul>
       </div>
-    </section>
+      <div class="joystick-up" onclick="prevService()"></div>
+      <div class="joystick-down" onclick="nextService()"></div>
+      <div class="button-red" onclick="activateService()"></div>
+    </div>
 
     <!-- Projects -->
     <section class="projects">

@@ -85,3 +85,111 @@ document.addEventListener("DOMContentLoaded", () => {
   // Simulate loading bar
   setTimeout(showLines, 5000); // after fake loading
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const words = [
+    "Full Stack Developer",
+    "UX Designer",
+    "Creative Technologist",
+    "AI Strategist",
+    "Dream Builder 💻✨"
+  ];
+  let i = 0;
+  let j = 0;
+  let currentWord = "";
+  let isDeleting = false;
+
+  const typedText = document.querySelector(".typed-text");
+
+  function typeEffect() {
+    if (!typedText) return;
+
+    if (i < words.length) {
+      if (!isDeleting && j <= words[i].length) {
+        currentWord = words[i].slice(0, j++);
+      } else if (isDeleting && j >= 0) {
+        currentWord = words[i].slice(0, j--);
+      }
+
+      typedText.innerHTML = currentWord;
+
+      if (!isDeleting && j === words[i].length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1200); // Pausa al final
+        return;
+      } else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % words.length;
+      }
+
+      setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+  }
+
+  typeEffect();
+});
+
+
+
+const services = [
+  { name: "DESIGN", bg: "galaxy", description: "Visual systems crafted to impress and express." },
+  { name: "DEVELOPMENT", bg: "code", description: "High-performance builds using modern, scalable tech." },
+  { name: "AI STRATEGY", bg: "chip", description: "Custom AI plans turning your data into decisions." },
+  { name: "SECURITY", bg: "cyber", description: "Encrypted frameworks to keep your systems bulletproof." },
+  { name: "BRANDING", bg: "vaporwave", description: "Identity design with emotional impact and clarity." },
+  { name: "UX/UI CONSULTING", bg: "uxgrid", description: "Fix friction. Elevate flow. Delight your users." },
+  { name: "E-COMMERCE", bg: "shop", description: "Stores that sell—optimized, automated, beautiful." },
+  { name: "FULL STACK INTEGRATIONS", bg: "stack", description: "Bringing frontend, backend, and APIs into harmony." },
+  { name: "MVP TOOLKIT", bg: "blueprint", description: "Launch-ready tools and templates to build fast." },
+  { name: "GROWTH STRATEGY", bg: "growth", description: "Digital tactics to attract, retain, and scale." },
+  { name: "INSERT COIN TO ENTER LABS", bg: "labs", description: "Experimental playground. Weird ideas welcome." }
+];
+
+let currentIndex = 0;
+
+function updateSelection() {
+  const items = document.querySelectorAll("#menu li");
+  items.forEach((item, index) => {
+    item.classList.toggle("selected", index === currentIndex);
+  });
+}
+
+function nextService() {
+  currentIndex = (currentIndex + 1) % services.length;
+  updateSelection();
+}
+
+function prevService() {
+  currentIndex = (currentIndex - 1 + services.length) % services.length;
+  updateSelection();
+}
+
+function activateService() {
+  const selected = services[currentIndex];
+
+  const overlay = document.createElement("div");
+  overlay.className = "service-overlay " + selected.bg;
+  overlay.innerHTML = `
+    <div class="transition-text">LEVEL UNLOCKED: ${selected.name}</div>
+    <div class="briefing">${selected.description}</div>
+    <button class="back-btn" onclick="goBack()">← BACK</button>
+  `;
+  document.body.appendChild(overlay);
+  setTimeout(() => overlay.classList.add("visible"), 50);
+}
+
+function goBack() {
+  const overlay = document.querySelector(".service-overlay");
+  if (overlay) overlay.remove();
+}
+
+document.addEventListener("keydown", (e) => {
+  const keysToBlock = ["ArrowUp", "ArrowDown", "Enter"];
+  if (keysToBlock.includes(e.key)) {
+    e.preventDefault();
+  }
+  if (e.key === "Enter") activateService();
+  else if (e.key === "ArrowDown") nextService();
+  else if (e.key === "ArrowUp") prevService();
+}, { passive: false });

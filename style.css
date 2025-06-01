@@ -880,3 +880,184 @@ button:is(:hover, :focus-visible) {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.6; }
 }
+
+
+.cursor {
+  display: inline-block;
+  background-color: black;
+  width: 1px;
+  animation: blink 0.7s infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.typed-text {
+  font-weight: bold;
+  color: #ff69b4; /* Puedes cambiar el color si quieres */
+  font-size: 2rem;
+}
+
+
+
+/* === ARCADE SERVICES SECTION ONLY === */
+
+.arcade {
+  position: relative;
+  width: 768px;
+  height: 1024px;
+  margin: 100px auto;
+  font-family: 'Press Start 2P', cursive;
+  z-index: 10;
+}
+
+.arcade-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.arcade .screen {
+  position: absolute;
+  top: 29%;
+  left: 17%;
+  width: 66%;
+  height: 36%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.arcade #menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #00ffff;
+  font-size: 18px;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.arcade #menu li {
+  margin: 8px 0;
+}
+
+.arcade .selected {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  animation: glitch 250ms ease-in-out;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.arcade .joystick-up,
+.arcade .joystick-down,
+.arcade .button-red {
+  pointer-events: auto;
+  position: absolute;
+  z-index: 20;
+  background: transparent;
+}
+
+.arcade .joystick-up {
+  bottom: 30%;
+  left: 23.5%;
+  width: 50px;
+  height: 50px;
+}
+.arcade .joystick-down {
+  bottom: 22%;
+  left: 23.5%;
+  width: 50px;
+  height: 50px;
+}
+.arcade .button-red {
+  bottom: 25.5%;
+  left: 61%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.service-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 1s ease;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: #00ffff;
+  padding: 20px;
+}
+
+.service-overlay.visible {
+  opacity: 1;
+}
+
+.service-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.service-overlay > * {
+  position: relative;
+  z-index: 1;
+}
+
+.transition-text {
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.briefing {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  font-size: 14px;
+  background: none;
+  color: #ff4444;
+  border: 2px solid #ff4444;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Backgrounds for each service */
+.galaxy { background: url('https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif') center/cover no-repeat; }
+.code { background: url('https://media.giphy.com/media/3ohhwmQFfYv97h4zPW/giphy.gif') center/cover no-repeat; }
+.chip { background: url('https://media.giphy.com/media/jQmVFypWInKCc/giphy.gif') center/cover no-repeat; }
+.cyber { background: url('https://media.giphy.com/media/YQitE4YNQNahy/giphy.gif') center/cover no-repeat; }
+.vaporwave { background: url('https://media.giphy.com/media/3o7buirYcmV5nSwIRW/giphy.gif') center/cover no-repeat; }
+.uxgrid { background: url('https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif') center/cover no-repeat; }
+.shop { background: url('https://media.giphy.com/media/l2SpQX2EjmDzJCxLO/giphy.gif') center/cover no-repeat; }
+.stack { background: url('https://media.giphy.com/media/l3q2zbskZp2a3c6rm/giphy.gif') center/cover no-repeat; }
+.blueprint { background: url('https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif') center/cover no-repeat; }
+.growth { background: url('https://media.giphy.com/media/xT5LMwq6QtLTMjU2hC/giphy.gif') center/cover no-repeat; }
+.labs { background: url('https://media.giphy.com/media/3og0IPxMM0erATueVW/giphy.gif') center/cover no-repeat; }
+
+/* === END ARCADE SECTION === */
