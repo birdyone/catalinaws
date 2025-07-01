@@ -24,7 +24,7 @@
 Initializing system...
 Decrypting modules...
 Establishing secure link...
-Biometric match found: Catalina A. Jorquera Velis
+Biometric match found: Catalina Jorquera
 AI Interface active
 Begin transmission:
       </pre>
@@ -64,7 +64,7 @@ Begin transmission:
       </div>
     </div>
     <p class="clients">80+ Happy Clients</p>
-    <button>
+    <!-- <button>
       <span class="text">Let's work together</span>
       <span class="container">
         <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -73,40 +73,85 @@ Begin transmission:
           <path d="M17.25 6.75L22.5 12L17.25 17.25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
         </svg>
       </span>
+    </button> -->
+
+    <!-- <button id="contactBtn" class="holo-button">
+      <span class="text">Let's work together</span>
+      <span class="icon">
+        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.75 17.25L1.5 12L6.75 6.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          <path d="M12 4 L12 20" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          <path d="M17.25 6.75L22.5 12L17.25 17.25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        </svg>
+      </span>
     </button>
+    
+    <!-- Overlay -->
+   <!-- <div id="holoOverlay">
+      <div class="scanline"></div>
+      <!-- <p>📡 Sending hologram...</p> -->
+    <!-- </div> 
+     -->
+     <a href="#" id="contactBtn" class="holo-button">
+      <span class="text">Let’s work together</span>
+      <span class="icon">
+        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.75 17.25L1.5 12L6.75 6.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          <path d="M12 4 L12 20" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          <path d="M17.25 6.75L22.5 12L17.25 17.25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        </svg>
+      </span>
+    </a>
+    
+    <!-- 🎛 Hologram Overlay -->
+    <div id="holoOverlay">
+      <div class="glitch-bg"></div>
+      <pre id="holoText" class="glitch-type"></pre>
+    </div>
+    
+    <!-- 🔊 Hologram Sound -->
+    <audio id="holoSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_7c5a437bd4.mp3" preload="auto"></audio>
+
+    
+
+    <script>
+      function typeEffect(element, text, speed = 45, callback) {
+        let i = 0;
+        function typeChar() {
+          if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeChar, speed);
+          } else if (callback) {
+            callback();
+          }
+        }
+        typeChar();
+      }
+    
+      document.getElementById("contactBtn").addEventListener("click", function (e) {
+        e.preventDefault();
+        const overlay = document.getElementById("holoOverlay");
+        const text = document.getElementById("holoText");
+        const sound = document.getElementById("holoSound");
+    
+        overlay.style.display = "flex";
+        text.textContent = "";
+        sound.play();
+    
+        typeEffect(text, "📡 Connecting to Catalina...\n🔐 Encrypting message...\n🚀 Launching contact protocol...", 50, () => {
+          setTimeout(() => {
+            window.open("mailto:hola@catalinajorquera.com?subject=Quiero%20trabajar%20contigo&body=Hola%20Catalina%2C%20me%20gustaría%20colaborar%20contigo.", "_self");
+          }, 1000);
+        });
+      });
+    </script>
+    
 
     <!-- Services -->
 
     <iframe src="arcade.html" width="100%" height="1000px" style="border: none;"></iframe>
 
-<!-- Services -->
-<!-- <div class="arcade"> -->
-  <!-- Marquee neon -->
-  <!-- <div class="marquee">SERVICES</div> -->
-
-  <!-- Screen con menú de servicios -->
-  <!-- <div class="screen">
-    <ul id="menu">
-      <li class="selected">> DESIGN</li>
-      <li>> DEVELOPMENT</li>
-      <li>> AI STRATEGY</li>
-      <li>> SECURITY</li>
-      <li>> BRANDING</li>
-      <li>> UX/UI CONSULTING</li>
-      <li>> E-COMMERCE</li>
-      <li>> FULL STACK INTEGRATIONS</li>
-      <li>> MVP TOOLKIT</li>
-      <li>> GROWTH STRATEGY</li>
-      <li>> INSERT COIN TO ENTER LABS</li>
-    </ul>
-  </div> -->
-
-  <!-- Controles interactivos -->
-  <!-- <div class="joystick-up"    onclick="prevService()"></div>
-  <div class="joystick-down"  onclick="nextService()"></div>
-  <div class="button-red"     onclick="activateService()"></div>
-</div>
-s -->
     <!-- Projects -->
     <section class="projects">
       <h2>Selected Work</h2>
@@ -192,7 +237,7 @@ s -->
     <section class="contact">
       <h2>Let’s Connect</h2>
       <p>Interested in working together? Reach out!</p>
-      <a class="contact-button" href="mailto:hello@catalinaj.dev">Email Me</a>
+      <a class="contact-button" href="mailto:catalina@legalbufete.com">Email Me</a>
     </section>
 
     <!-- Terminal -->

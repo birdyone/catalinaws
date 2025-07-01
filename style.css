@@ -662,7 +662,7 @@ button:is(:hover, :focus-visible) {
 
 .skills {
   padding: 80px 20px;
-  background-color: transparent;
+  background-color: #0f0f1c;
   text-align: center;
   color: white;
 }
@@ -800,7 +800,7 @@ button:is(:hover, :focus-visible) {
   color: #00f2fe;
   font-weight: bold;
   text-shadow: 0 0 5px #00f2fe, 0 0 10px #9b00ff;
-  background-color: rgba(0,0,0,0.7);
+  background-color: transparent;
   padding: 4px 10px;
   border-radius: 6px;
   animation: flicker 1.5s infinite;
@@ -830,7 +830,7 @@ button:is(:hover, :focus-visible) {
   color: #00f2fe;
   font-weight: bold;
   text-shadow: 0 0 5px #00f2fe, 0 0 10px #9b00ff;
-  background-color: rgba(0,0,0,0.7);
+  background-color: transparent;
   padding: 4px 10px;
   border-radius: 6px;
   animation: flicker 1.5s infinite;

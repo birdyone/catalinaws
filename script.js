@@ -146,3 +146,16 @@ document.addEventListener("keydown", (e) => {
   else if (e.key === "ArrowDown") nextService();
   else if (e.key === "ArrowUp") prevService();
 }, { passive: false });
+
+
+
+document.getElementById("contactBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  const overlay = document.getElementById("holoOverlay");
+  overlay.style.display = "flex";
+
+  setTimeout(() => {
+    window.open("mailto:catalina@legalbufete.com?subject=I%20want%20info&body=Hi!%20Catalina%2C%20I'm%20interest%20in%20work%20withyou", "_self");
+
+  }, 2000);
+});
