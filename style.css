@@ -662,7 +662,7 @@ button:is(:hover, :focus-visible) {
 
 .skills {
   padding: 80px 20px;
-  background-color: #0f0f1c;
+  background-color: transparent;
   text-align: center;
   color: white;
 }
@@ -697,7 +697,7 @@ button:is(:hover, :focus-visible) {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  box-shadow: 0 0 8px #00000050;
+  box-shadow: transparent;
   overflow: hidden;
 }
 
