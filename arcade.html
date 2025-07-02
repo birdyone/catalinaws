@@ -197,6 +197,31 @@
     @keyframes blink-cursor {
       50% { opacity: 0; }
     }
+
+    /* === Estilos móviles === */
+    @media (max-width: 480px) {
+      .cabinet {
+        width: 90vw;
+        padding: 10px;
+      }
+
+      .screen {
+        height: 200px;
+        font-size: 14px;
+      }
+
+      .marquee {
+        font-size: 20px;
+      }
+
+      .insert-coin {
+        font-size: 18px;
+      }
+
+      .terminal-text {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -244,7 +269,9 @@
     renderMenu();
 
     function renderMenu() {
-      screen.innerHTML = originalOptions.map((opt, i) => `<div class="option${i === selectedIndex ? ' selected glitch' : ''}">${i === selectedIndex ? '> ' : ''}${opt}</div>`).join('');
+      screen.innerHTML = originalOptions.map((opt, i) =>
+        `<div class="option${i === selectedIndex ? ' selected glitch' : ''}">${i === selectedIndex ? '> ' : ''}${opt}</div>`
+      ).join('');
     }
 
     function updateSelection(index) {
@@ -275,6 +302,37 @@
     });
 
     document.addEventListener('mouseup', () => {
+      if (!dragging) return;
+      dragging = false;
+      joystick.style.transition = 'transform 0.2s ease';
+      joystick.style.transform = 'translateY(0)';
+    });
+
+    // 📱 Soporte táctil
+    joystick.addEventListener('touchstart', e => {
+      dragging = true;
+      startY = e.touches[0].clientY;
+      joystick.style.transition = 'none';
+    }, { passive: false });
+
+    document.addEventListener('touchmove', e => {
+      if (!dragging) return;
+      e.preventDefault();
+      const d = e.touches[0].clientY - startY;
+      const c = Math.max(-30, Math.min(30, d));
+      joystick.style.transform = `translateY(${c}px)`;
+      if (c < -20 && selectedIndex > 0) {
+        selectedIndex--;
+        updateSelection(selectedIndex);
+        startY = e.touches[0].clientY;
+      } else if (c > 20 && selectedIndex < originalOptions.length - 1) {
+        selectedIndex++;
+        updateSelection(selectedIndex);
+        startY = e.touches[0].clientY;
+      }
+    }, { passive: false });
+
+    document.addEventListener('touchend', () => {
       if (!dragging) return;
       dragging = false;
       joystick.style.transition = 'transform 0.2s ease';
